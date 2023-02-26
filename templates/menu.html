@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!-- menu.html-->
+<html>
+  <head>
+    {% include 'head.html' %}
+
+  </head>
+  <body>
+      
+    {% include 'saas_nav_bar.html' %}
+
+    <div class="text-center mt-5">
+        <br><br><br>
+
+
+        <h1  style="color: rgb(54, 24, 88);"">Choose your Issuer or Verifier connector</h1>
+        <br><br>
+
+<div class="row my-5">
+
+    <div class="col-4 mx-auto my-5">
+          <div id="id_qrcode" class="text-center">
+              <a href="/ebsi/saas4ssi/ebsi/verifier">
+              <h3><strong>EBSI Verifier for conformant mobile wallets</strong></h3>
+              </a>
+              This is a bridge between the SIOPv2 EBSI verifier flow and a standard OpenID authorization code flow and implicit flow.
+              <br>Compliant with all frameworks (Nodejs, Python, C, Ruby, Java,...) and popular CMS (Webflow, Wordeprss,...).
+            This verifier accepts EBSI compliant wallets with support for did:ebsi.<br>
+            <a href="https://openid.net/specs/openid-connect-self-issued-v2-1_0.html"
+            >See SIOPv2 standards</a>
+          </div> 
+    </div>
+
+
+    <div class="col-4 mx-auto my-5">
+      <div id="id_qrcode" class="text-center">
+        <a href="/ebsi/saas4ssi/ebsi/issuer">
+          <h3><strong>EBSI issuer for conformant mobile wallets</strong></h3>
+          </a>
+         Issuer for EBSI-V2 , OIDC4VC issuance<br>
+         Support of authorization code flow and pre-authorized_code flow <br>
+         <a href="https://openid.net/specs/openid-connect-4-verifiable-credential-issuance-1_0-05.html
+         ">See OIDC4VCI standards</a>
+      </div> 
+    </div>
+   
+  </div>
+       
+   </div>
+              <script src="{{ url_for('static', filename='jquery-3.5.1.slim.min.js') }}"></script>
+              <script src="{{ url_for('static', filename='bs-init.js') }}"></script>
+              <script src="{{ url_for('static', filename='bootstrap.min.js') }}"></script>
+    
+  </body>
+</html>

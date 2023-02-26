@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<!-- home.html-->
+<html>
+  <head>
+    {% include 'head.html' %}
+  </head>
+  <body>
+      
+    {% include 'saas_nav_bar.html' %} 
+
+    <div class="container-fluid">
+      {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+          {% for category, message in messages %}
+      <div class="alert alert-{{ category }} alert-dismissible fade show m-0" role="alert">
+          <h6 style="background-color : rgb(245, 207, 207)">{{ message }}</h6>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+          </button>
+      </div>
+          {% endfor %}
+      {% endif %}
+  {% endwith %}
+       
+
+    <div class="row">
+        <div class="col  text-center mt-5">
+            <h1 class="my-5" ><strong>Build EBSI issuers and verifiers in minutes</strong></h1>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-lg-8 col-sm-12  offset-lg-2 text-center">
+            <div class="my-2 p-2">                
+                   <h2>Altme Saas is a <strong>next-generation platform</strong> to integrate EBSI Decentralized Identity solutions in applications.
+                    
+                  </h2>
+            </div>
+       </div>
+    </div>
+
+    <div id="content_desktop" class="d-none d-sm-block"  style="background-color: {{page_background_color}} " >
+      <div id="wrapper">
+          <div class="d-flex flex-column">
+              <div class="container">
+                  <div class="row d-flex justify-content-center ">    
+                      <div class="col-4">
+                  <div class="card shadow o-hidden border-0 mt-5" style="border-radius: 4%; background-color: {{qrcode_background_color}}" >
+                              <div class="card-body p-0">
+                                  <div id="id_text" class="p-5">
+                                      <div class="text-center"><h4 class="mb-4">Admin</h4></div>
+                                      <form class="user" action="/ebsi/saas4ssi/admin" method="POST">
+                                          <div class="form-group">
+                                              <input required="" class="form-control"  type="password" title=""  name="secret" style="color: rgb(133,135,150);">
+                                          </div>
+                                          <br>
+                                          <button class="border border-secondary btn btn-block  btn-user"style="background-color: {{page_background_color}} " type="submit">Next</button>
+                                      </form>                                             
+                                  </div>        
+                              </div> 
+                          </div>
+                      </div>
+                  </div>
+              </div>           
+          </div>
+      </div>
+  </div>
+
+   
+
+</div>
+
+                 
+       
+   
+
+
+              <script src="{{ url_for('static', filename='jquery-3.5.1.slim.min.js') }}"></script>
+              <script src="{{ url_for('static', filename='bs-init.js') }}"></script>
+              <script src="{{ url_for('static', filename='bootstrap.min.js') }}"></script>
+  </body>
+</html>
